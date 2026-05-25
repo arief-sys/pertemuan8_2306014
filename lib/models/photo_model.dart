@@ -1,13 +1,15 @@
 class PhotoModel {
+  String id;
   String author;
-  String downloadUrl;
+  String url;
 
-  PhotoModel({required this.author, required this.downloadUrl});
+  PhotoModel({required this.id, required this.author, required this.url});
 
-  factory PhotoModel.fromJson(Map<String, dynamic> json) {
+  factory PhotoModel.formJson(Map<String, dynamic> json){
     return PhotoModel(
+      id: json['id'],
       author: json['author'],
-      downloadUrl: json['download_url'],
+      url: json['download_url'],
     );
   }
 }
